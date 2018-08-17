@@ -1,5 +1,39 @@
 # Git Learnings
 
+## Git Bash Completion
+
+The Pro Git Book v2 [Git in Bash](https://git-scm.com/book/en/v2/Appendix-A%3A-Git-in-Other-Environments-Git-in-Bash)
+says:
+
+  1. Get `git-completion.bash`,
+     e.g. from [github/git/git/contrib/completion/git-completion.bash]
+     (https://github.com/git/git/blob/master/contrib/completion/git-completion.bash)
+  2. Put it somewhere on your machine, e.g. the home directory.
+  3. Add `. <path>/git-completion.bash` to your `~/.bashrc`.<br>
+     Or `source <path>/git-completion.bash` reads better.
+
+The Pro Git Book v1 [Git Basics - Tips and Tricks](https://git-scm.com/book/en/v1/Git-Basics-Tips-and-Tricks) also offers:
+
+  4. To enable completion automatically for all users, put `git-completion.bash` in `/etc/bash_completion.d/` directory.
+
+Aug 2018: macOS: simply putting `git-completion.bash` in `/etc/bash_completion.d/` directory did not enable completion in new Terminal window.
+
+Aug 2018: macOS: Using the latest `git-completion.bash` with macOS built-in `/usr/bin/git` gave errors,<br>
+-- e.g. type "git sta", press TAB, and get "Unknown option: --list-cmds=...".
+
+### The Homebrew Way
+
+As recommended by [bobthecow/git-flow-completion](https://github.com/bobthecow/git-flow-completion/wiki/Install-Bash-git-completion), the best is to:
+
+1. Install `git` and `bash-completion` packages via Homebrew
+   ```
+   brew install git bash-completion
+   ```
+2. Add the following line to `~/.bash_profile`
+   ```
+   [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+   ```
+
 ## Git Aliases
 
 The Pro Git Book v2 gives a few good aliases: `co`, `br`, `ci`, `st`.<br>
