@@ -5,9 +5,7 @@
 The Pro Git Book v2 [Git in Bash](https://git-scm.com/book/en/v2/Appendix-A%3A-Git-in-Other-Environments-Git-in-Bash)
 says:
 
-  1. Get `git-completion.bash`,
-     e.g. from [github/git/git/contrib/completion/git-completion.bash]
-     (https://github.com/git/git/blob/master/contrib/completion/git-completion.bash)
+  1. Get `git-completion.bash`, e.g. from [github/git/git/contrib/completion/git-completion.bash](https://github.com/git/git/blob/master/contrib/completion/git-completion.bash).
   2. Put it somewhere on your machine, e.g. the home directory.
   3. Add `. <path>/git-completion.bash` to your `~/.bashrc`.<br>
      Or `source <path>/git-completion.bash` reads better.
