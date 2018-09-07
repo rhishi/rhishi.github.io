@@ -9,6 +9,21 @@ on the home page.
 ```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
+
+## Things I have installed explicitly
+
+```
+# August 2018
+brew install bash
+brew install bash-completion
+brew install git
+brew install gdb
+brew install node
+
+# September 2018
+brew install ipmitool
+```
+
 ## Caveats
 
 ### gdb
@@ -37,6 +52,35 @@ For compilers to find this software you may need to set:
 ```
 LDFLAGS:  -L/usr/local/opt/icu4c/lib
 CPPFLAGS: -I/usr/local/opt/icu4c/include
+```
+
+### openssl
+openssl-1.0.2p.high_sierra.bottle.tar.gz -- September 2018
+
+A CA file has been bootstrapped using certificates from the SystemRoots
+keychain. To add additional certificates (e.g. the certificates added in
+the System keychain), place .pem files in
+```
+/usr/local/etc/openssl/certs
+```
+
+and run
+```
+/usr/local/opt/openssl/bin/c_rehash
+```
+
+openssl is keg-only, which means it was not symlinked into /usr/local,
+because Apple has deprecated use of OpenSSL in favor of its own TLS and crypto libraries.
+
+If you need to have openssl first in your PATH run:
+```
+echo 'export PATH="/usr/local/opt/openssl/bin:$PATH"' >> ~/.bash_profile
+```
+
+For compilers to find openssl you may need to set:
+```
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl/include"
 ```
 
 ## Install Example
